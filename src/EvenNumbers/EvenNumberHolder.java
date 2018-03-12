@@ -10,10 +10,13 @@ public class EvenNumberHolder {
 		// currentEven++;
 
 		// this is not an atomic operation either
-		currentEven += 2;
+		// currentEven += 2;
 
-		// solution: synchronization should be used		
-		
+		// solution: synchronization should be used
+		synchronized (this) {
+			currentEven += 2;
+		}
+
 		return currentEven;
 	}
 
