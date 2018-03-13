@@ -19,7 +19,16 @@ public class Main {
 			myThreads[i].start();
 		}
 
-		
+		for (int i = 0; i < 5; i++) {
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			myThreads[i].interrupt();
+
+		}
+
 		System.out.println("Finished (Main)");
 	}
 
